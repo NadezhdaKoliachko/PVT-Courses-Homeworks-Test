@@ -1,0 +1,151 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MassiveForTestNG</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">core</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MassiveForTestNG (core)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MassiveForTestNG</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (20/ 20)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package core;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.Arrays;
+<i>4</i>&nbsp;import java.util.List;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;public class MassiveForTestNG {
+<i>7</i>&nbsp;    int size;
+<i>8</i>&nbsp;    String name;
+<i>9</i>&nbsp;
+<b class="fc"><i>10</i>&nbsp;    public MassiveForTestNG(int size, String name) {</b>
+<b class="fc"><i>11</i>&nbsp;        this.size = size;</b>
+<b class="fc"><i>12</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i>13</i>&nbsp;    }</b>
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    public Object[] createArray(Object... o)  {
+<i>16</i>&nbsp;        Object[] array;
+<b class="fc"><i>17</i>&nbsp;        array = Arrays.stream(o, 0, size).toArray();</b>
+<b class="fc"><i>18</i>&nbsp;        return array;</b>
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    }
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    public Object[] reverseArray(Object[] array) {
+<b class="fc"><i>23</i>&nbsp;        Object[] reversedArray = new Object[size];</b>
+<b class="fc"><i>24</i>&nbsp;        int counter = 1;</b>
+<b class="fc"><i>25</i>&nbsp;        for (int i = 0; i &lt; size; i++) {</b>
+<b class="fc"><i>26</i>&nbsp;            reversedArray[i] = array[size - counter];</b>
+<b class="fc"><i>27</i>&nbsp;            counter++;</b>
+<i>28</i>&nbsp;        }
+<b class="fc"><i>29</i>&nbsp;        return reversedArray;</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    public Object returnOutOfBoundException(Object[] array) throws ArrayIndexOutOfBoundsException {
+<b class="fc"><i>33</i>&nbsp;        return array[1000];</b>
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    public Object returnFirstElement(Object[] array) {
+<b class="fc"><i>37</i>&nbsp;        return array[0];</b>
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    public Object returnLastElement(Object[] array) {
+<b class="fc"><i>41</i>&nbsp;        return array[size - 1];</b>
+<i>42</i>&nbsp;    }
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    public int returnMassiveSize(Object[] array) {
+<b class="fc"><i>45</i>&nbsp;        return array.length;</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    public Object[] sortArray(Object[] array){
+<b class="fc"><i>49</i>&nbsp;        Arrays.sort(array);</b>
+<b class="fc"><i>50</i>&nbsp;        return array;</b>
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;    public String arrayToString(Object[] array) {
+<b class="fc"><i>54</i>&nbsp;        return Arrays.toString(array);</b>
+<i>55</i>&nbsp;    }
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    public List&lt;Object&gt; arrayAsList(Object[] array) {
+<b class="fc"><i>58</i>&nbsp;        return Arrays.asList(array);</b>
+<i>59</i>&nbsp;    }
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-02-27 01:14</div>
+</div>
+</body>
+</html>
