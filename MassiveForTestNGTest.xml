@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+        <suite name="RunSomeTests" parallel="false">
+        <test name="TestForGroups">
+            <groups>
+                <run>
+                    <include name="NotCreateMethodTests" />
+                </run>
+            </groups>
+            <classes>
+                <class name="core.MassiveForTestNGTest" />
+            </classes>
+        </test>
+        <test name="OtherTests">
+            <classes>
+                <class name="core.MassiveForTestNGTest">
+                </class>
+            </classes>
+        </test>
+        </suite>
