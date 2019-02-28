@@ -1,0 +1,18 @@
+Мой мир - .//a[@id = "ph_my"]/span
+Все проекты - .//a[@class= "x-ph__menu__button"]
+Календарик - .//a[@class= "mailbox__icon mailbox__icon_calendar i-pull-right i-link-no-deco"]
+Имя ящика - .//div[@id= "mailbox:loginContainer"]/input
+Чекбокс Запомнить - .//label[@class= "mailbox__control mailbox__control_saveauth i-font-md i-color-black"]
+R.I.P ICQ. Берем Облако - .//div[@class= "projects-item__body"]/h3
+Агент - .//div[@class = "grid__lcol i-pull-left"]/div
+Картинки - .//div[@id = "search__categories"]/a[2]
+Лупа - .//label[@for = "q"]
+Сексизм на мейл ру, вместо людей - Леди - .//a[@tabindex = "33"]
+... - .//span[@name = "clb818633"]
+СПОРТ - .//div[@class = "news-item__inner"]/a[@href= "//sportmail.ru"]
+Найти - .//input[@class = "btn btn_orange search__btn i-no-left-radius"]
+Нет клуба для бизнеса, есть город чтобы погоду смотреть - .//div[@class = "choose-city"]
+Курс валют - .//a[@name = "clb23480515"]
+Нет включить почту, берем О компании - .//a[@href= "//corp.mail.ru/adv/"]
+
+

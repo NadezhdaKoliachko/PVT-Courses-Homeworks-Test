@@ -1,0 +1,22 @@
+p {
+    text-indent: 40px;
+    font-size: 14pt;
+}
+
+body {
+    margin: 2% 10% 10%;
+    margin-bottom: 1em;
+    background: url("newyork2.jpg"), rgba(255, 255, 255, 0.8);
+    background-blend-mode: color;
+    background-position: center;
+    -webkit-background-size: cover;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+.title {
+    font-family: Comic Sans, Gabriola, Monotype Corsiva, Author, Zapf Chancery, fantasy;
+    font-size: 20pt;
+}
