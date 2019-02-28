@@ -1,0 +1,37 @@
+Case C001
+User log in with correct email and password
+
+Preconditions:
+Open browser and enter link https://mail.ru
+in address field
+
+Steps:                                                         Expected result:
+1. Tap Enter or Find button                                    User is redirected to Mail.ru
+2. Enter correct email and password in adjacent fields         Credentials are correct
+3. Tap Войти button                                            User successfully logged in
+
+Case C002
+User log in with empty fields
+
+Preconditions:
+Open browser and enter link https://mail.ru
+in address field
+
+Steps:                                                         Expected result:
+1. Tap Enter or Find button                                    User is redirected to Mail.ru
+2. Don't enter email and password in adjacent fields          Fields are empty
+3. Tap Войти button                                            User gets hint like: "Введите имя ящика и пароль"
+
+Case C003
+User log in with nonexistent email
+
+Preconditions:
+Open browser and enter link https://mail.ru
+in address field
+
+Steps:                                                         Expected result:
+1. Tap Enter or Find button                                    User is redirected to Mail.ru
+2. Enter nonexistent email in correct format in
+adjacent field                                                 Email validated correctly
+3. Enter password in adjuscent fields                          Password validated correctly
+3. Tap Войти button                                            User gets hint like: "Неверное имя или пароль"
