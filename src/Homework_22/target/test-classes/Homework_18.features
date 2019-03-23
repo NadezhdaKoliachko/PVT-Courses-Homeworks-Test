@@ -1,0 +1,17 @@
+Feature: Test booking page
+
+  Background: I make preconditions for booking page
+    Given I am on booking page
+    When I choose city, amount of guests and rooms and click Check button
+    Then I'm on page with founded hotels
+
+  Scenario: Check hotels are present on default dates
+    When I check how many hotels are present on default dates
+    Then I see amount of hotels > 0
+    #Examples:
+     # | city  | guests | rooms |
+      #| Paris | 2      | 1     |
+
+  Scenario: Check rate of first hotel in the best hotels filter is >= 9
+    When I click threedots button and choose mark plus feedbacks filter
+    Then I check rate of first founded hotels is >= 9
