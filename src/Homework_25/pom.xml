@@ -5,14 +5,36 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pom.projects</groupId>
-    <artifactId>homework_21.pom.projects</artifactId>
+    <artifactId>final.pom.projects</artifactId>
+    <name>final-project</name>
+    <description>This is the final project on PHT automation testing course on Java. In this project realized main
+    patterns, such as Page Object, Page Factory, Singletone, Builder, Value Object. There are JUnit, TestNG, Selenium,
+        Cucumber, Log4j, jdbc were used for test writing, execution, building and logging.</description>
     <version>1.0-SNAPSHOT</version>
     <properties>
+        <allure.version>1.5.2</allure.version>
+        <aspectj.version>1.8.4</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.6</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-cucumber-jvm-adaptor</artifactId>
+            <version>1.6.2</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/log4j/log4j -->
         <dependency>
             <groupId>log4j</groupId>
@@ -20,7 +42,7 @@
             <version>1.2.17</version>
         </dependency>
         <dependency>
-           <groupId>mysql</groupId>
+            <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.15</version>
         </dependency>
@@ -107,8 +129,58 @@
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.19.1</version>
+                    <configuration>
+                        <testFailureIgnore>true</testFailureIgnore>
+                        <argLine>
+                            -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                        </argLine>
+                        <properties>
+                            <property>
+                                <name>listener</name>
+                                <value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
+                            </property>
+                        </properties>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjweaver</artifactId>
+                            <version>${aspectj.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <configuration>
+                        <webAppSourceDirectory>${project.build.directory}/site/allure-maven-plugin</webAppSourceDirectory>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
-
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-maven-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

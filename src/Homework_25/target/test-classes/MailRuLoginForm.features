@@ -1,0 +1,37 @@
+@LoginFlow
+Feature: Test login form on mail.ru page
+
+  This file is displayed common basic cases for testing login form on mail.ru service.
+  Can be used in smoke or acceptance testing of login feature.
+
+  Background: I make preconditions for mail.ru login form test
+    Given I go on mail.ru page
+
+
+
+  Scenario: Check login when all fields are filled correctly
+    When I enter correct credentials and tap "Войти"
+    Then I can open user account
+
+  Scenario: Check login with correct email and wrong password
+    When I input correct email and wrong password and tap "Войти" button
+    Then I see error message
+
+  Scenario: Check login with wrong email and correct password
+    When I input wrong email and correct password and tap "Войти" button
+    Then I see captcha
+
+  Scenario: Check login with wrong email and password
+    When I input wrong email and password and tap "Войти" button
+    Then I see captcha
+
+  Scenario: I check "Забыли пароль?" link
+    When I tap "Забыли пароль" link
+    Then I check user redirected on correct page
+
+  Scenario: I check "Remember me" checkbox
+    When I input correct credentials and tap "Remember me" checkbox and tap "Войти" button
+    Then I can open user account
+    When I make logout
+    Then I check email field isn't empty
+

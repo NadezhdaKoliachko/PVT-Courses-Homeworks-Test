@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Homework_18.features"
+        features = "Homework_22/src/test/resources/Homework_18.features"
 )
 public class Homework_18Run {
 }
