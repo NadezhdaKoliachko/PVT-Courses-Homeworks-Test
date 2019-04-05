@@ -1,0 +1,36 @@
+@AuthorizationFlow
+Feature: Test registration form on mail.ru
+
+  This file is displayed common basic cases for testing registration form on mail.ru service.
+  Can be used in smoke or acceptance testing of registration feature.
+
+  Background: I make preconditions for mail.ru registration form test
+    Given I am on mail.ru page
+    When I tap registration link
+    Then I am on registration page
+
+  Scenario: Check registration when all fields are empty
+    When I clear all fields and tap "Зарегистрироваться" button
+    Then I check error messages near all fields
+
+  Scenario: Check registration with correct data for all fields
+    When I fill all fields with correct data and tap "Зарегистрироваться"
+    Then I see capture
+
+  Scenario: Check end-user license agreement link works correctly
+    When I tap end-user license agreement link
+    Then I am on page with end-user license agreement
+
+  Scenario: Check registration with wrong email data
+    When I input wrong email data in email input field, fill other fields correctly and tap "Зарегистрироваться"
+    Then I see error message for email input field
+
+  Scenario: I check page behavior when date value is min
+    When I choose min values for day, month and year and tap "Зарегистрироваться"
+    Then I see capture
+
+  Scenario: I check page behavior when date is max
+    When I choose max values for day, month and year and tap "Зарегистрироваться"
+    Then I see capture
+
+

@@ -1,0 +1,11 @@
+runner\Runner.class
+vkTestMethods.class
+MailRuRegistrationFormSteps.class
+parser\DomParser.class
+SQLConnection.class
+handler\CredentialsHandler.class
+MailRuLoginFormSteps.class
+MailRuRegistrationFormPage.class
+model\Credentials.class
+MailRuLoginFormPage.class
+InputFields.class
