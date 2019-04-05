@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: vkTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.193 s <<< FAILURE! - in vkTest
+assertEditPost(vkTest)  Time elapsed: 0.241 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<{"[response":1]}> but was:<{"[error":{"error_code":10,"error_msg":"Internal server error: post or comment deleted","request_params":[{"key":"oauth","value":"1"},{"key":"method","value":"wall.edit"},{"key":"owner_id","value":"536083852"},{"key":"v","value":"5.92"},{"key":"message","value":"I edit this message"},{"key":"post_id","value":"421"}]}]}>
+	at vkTest.assertEditPost(vkTest.java:31)
+
+deletePost(vkTest)  Time elapsed: 0.166 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<{"[response":1]}> but was:<{"[error":{"error_code":210,"error_msg":"Access to wall's post denied","request_params":[{"key":"oauth","value":"1"},{"key":"method","value":"wall.delete"},{"key":"owner_id","value":"536083852"},{"key":"v","value":"5.92"},{"key":"post_id","value":"421"}]}]}>
+	at vkTest.deletePost(vkTest.java:38)
+
